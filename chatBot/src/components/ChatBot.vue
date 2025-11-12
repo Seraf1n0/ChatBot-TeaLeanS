@@ -8,7 +8,7 @@ import MessageBubble from './MessageBubble.vue'
 import type { Message } from '@/interfaces/ChatBot'
 
 const messages = ref<Message[]>([
-  { id: '1', text: 'Hola! ¿En qué puedo ayudarte?', sender: 'bot', time: new Date().toLocaleTimeString() },
+  { id: '1', text: 'Hola Tilin! ¿En qué puedo ayudarte?', sender: 'bot', time: new Date().toLocaleTimeString() },
 ])
 
 const mensajeUsuario = ref("")
@@ -26,7 +26,7 @@ const blockedRe = /\b(insult|ofensiv|vulgar|sex|sexual|porno|pornograf|violenci|
 const rechazo = "No puedo responder eso."
 
 const systemBaseConMatch =
-  "Eres un asistente general, breve (máx 2 frases), amistoso y con humor ligero. Responde SOLO usando el fragmento dado. Si falta info di: 'No tengo ese dato exacto.' sin inventar."
+  "Eres un asistente general, breve (máx 2 frases), amistoso y con humor ligero. Responde SOLO usando el fragmento dado. Ademas dile 'Tilin' a los usuarios"
 const systemBaseNoMatch =
   "Eres un asistente general, breve (máx 2 frases), amistoso y con humor ligero. Si no sabes algo dilo sin inventar y sugiere reformular."
 
