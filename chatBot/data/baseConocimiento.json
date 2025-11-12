@@ -1,9 +1,9 @@
 {
-    "Recuperar pin": "Para recuperar el pin de su tarjeta debe dirigirse a la sección de mis cuentas, una vez ahí debe seleccionar la opción de 'Recuperar pin' y este le solicitará cierto tipo de dato según la tarjeta que usted desee ver, entonces los pasos quedan de la siguiente manera: 1.Entrar a mis cuentas. 2.Seleccionar la opción de 'Recuperar pin'. 3.Indicar los datos solicitados. 4.Recibir el pin en su correo electrónico registrado.",
-    "Cerrar cuenta": "Lamentamos saber que quiere cerrar su cuenta bancaria. Para proceder con el cierre de su cuenta, por favor siga estos pasos: 1. Listar todas las cuentas asociadas a su nombre. 2.Crear una solicitud de cierre de cuenta. 3. Para crear la solicitud debe dirigirse a su sucursal más cercana con su identificación oficial y el listado de todos sus cuentas.",
-    "Ver tarjetas": "Para observar todas las tarjetas asociadas a su cuenta bancaria debe seguir estas indicaciones: 1.Ingresar a la sección de 'Mis tarjetas' esta se encuentra a un costado izquierdo en la parte superior de su pantalla. 2.Una vez dentro de la sección podrá deslizar y observar todas sus tarjetas asociadas a su cuenta bancaria.",
-    "Solicitar tarjeta": "Para la solicitud de una nueva tarjeta bancaria debe seguir estos pasos: 1. Ingresar a la sección de 'Tarjetas' esta se encuentra en el menú principal. 2. Observar si se cumplen los requisitos para la solicitud de una nueva tarjeta. 3. Seleccionar la opción de 'Solicitar nueva tarjeta'. 4. Llenar el formulario con los datos solicitados. 5. Enviar la solicitud y esperar la confirmación por correo electrónico.",
-    "Decir pin de tarjeta": "Por razones de seguridad no le podemos indicar su pin de tarjeta a través de este medio. Pero lo puedes restablecer de la siguiente manera: 1.Entrar a mis cuentas. 2.Seleccionar la opción de 'Recuperar pin'. 3.Indicar los datos solicitados. 4.Recibir el pin en su correo electrónico registrado.",
-    "Decir contraseña de cuenta": "Por razones de seguridad no le podemos indicar su contraseña de cuenta a través de este medio. Pero lo puedes restablecer de la siguiente manera: 1.Entrar a mi cuenta. 2.Seleccionar la opción de 'Recuperar contraseña'. 3.Indicar los datos solicitados. 4.Recibir la contraseña en su correo electrónico registrado.",
-    "Ver movimientos": "Para ver los movimientos de su cuenta bancaria debe seguir estos pasos: 1. Ingresar a la sección de 'Mis cuentas' en el menú principal. 2. Seleccionar la cuenta de la cual desea ver los movimientos. 3. Hacer clic en la opción de 'Ver movimientos' para desplegar el historial de transacciones asociadas a esa cuenta."
+  "saludo": "¡Hey! ¿Todo bien? Listo para charlar.",
+  "chiste": "Programar es 10% escribir código y 90% preguntar '¿por qué no funciona?'.",
+  "dato curioso": "Los pulpos tienen tres corazones. Uno para cada bug existencial.",
+  "motivación": "Pequeños avances diarios vencen grandes impulsos ocasionales.",
+  "productividad": "Un timer y quitar notificaciones hacen magia.",
+  "javascript": "Lenguaje flexible: poder + caos. Usa linters y dormirás mejor.",
+  "adios": "¡Se cuida! Aquí estaré flotando en la nube."
 }

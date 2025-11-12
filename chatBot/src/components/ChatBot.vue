@@ -22,8 +22,13 @@ const fuse = new Fuse(Object.keys(baseConocimiento), {
 })
 
 // Palabras a bloquear 
-const blockedRe = /\b(insult|ofensiv|vulgar|sex|sexual|porno|pornograf|violenci|amenaz|matar|asesin|violaci|violar|suicid)\b/i
-const rechazo = "No puedo ayudar con ese tipo de solicitud."
+const blockedRe = /\b(insult|ofensiv|vulgar|sex|sexual|porno|pornograf|violenci|amenaz|matar|asesin|violaci|suicid|odio|rac|discrimin)\b/i
+const rechazo = "No puedo responder eso."
+
+const systemBaseConMatch =
+  "Eres un asistente general, breve (máx 2 frases), amistoso y con humor ligero. Responde SOLO usando el fragmento dado. Si falta info di: 'No tengo ese dato exacto.' sin inventar."
+const systemBaseNoMatch =
+  "Eres un asistente general, breve (máx 2 frases), amistoso y con humor ligero. Si no sabes algo dilo sin inventar y sugiere reformular."
 
 function scrollToBottom() {
   requestAnimationFrame(() => {
@@ -77,7 +82,7 @@ const enviarMensaje = async () => {
         messages: [
           {
             role: "system",
-            content: `Eres un asistente amable del Banco prometedores. Responde SOLO usando esta información:\n${respuesta}\n\nSi la información no cubre la pregunta, dilo brevemente y sugiere próximos pasos (por ejemplo, contactar soporte oficial, visitar una sucursal o la web del banco). No inventes datos específicos del banco.`
+            content: `${systemBaseConMatch}\n\nFragmento:\n${respuesta}`
           },
           { role: "user", content: pregunta }
         ]
@@ -91,10 +96,7 @@ const enviarMensaje = async () => {
         const body: BodyChat = {
         model: "openai/gpt-oss-20b:free",
         messages: [
-          {
-            role: "system",
-            content: `Eres un asistente del Banco prometedores. No se encontró esta consulta en la base de conocimiento. Ofrece una respuesta general, amable y útil basada en buenas prácticas bancarias, en 2–4 frases. Evita afirmar políticas internas específicas; sugiere próximos pasos prácticos (web oficial, app, atención al cliente, sucursal). NO INVENTES DATOS ESPECÍFICOS DEL BANCO.`
-          },
+          { role: "system", content: systemBaseNoMatch },
           { role: "user", content: pregunta }
         ]
       }
