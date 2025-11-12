@@ -1,4 +1,3 @@
-//Referencia:https://openrouter.ai/openai/gpt-oss-20b:free con el curl
 export interface RespuestaChat {
     "choices": Array<{
         "message": {

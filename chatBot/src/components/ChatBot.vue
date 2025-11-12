@@ -78,7 +78,6 @@ const enviarMensaje = async () => {
       const respuesta = baseConocimiento[resultado as keyof typeof baseConocimiento]
 
       const body: BodyChat = {
-        model: "openai/gpt-oss-20b:free",
         messages: [
           {
             role: "system",
@@ -88,20 +87,19 @@ const enviarMensaje = async () => {
         ]
       }
 
-      data = await enviarMensajeAPI(body)
+      data = await sendWithRetry(body)
       respuestaBot.value =
         data?.choices?.[0]?.message?.content?.trim() ||
         "No encuentro esa información exacta en el sistema, pero puedo ayudarte con pasos generales o derivarte a un canal oficial."
     } else {
         const body: BodyChat = {
-        model: "openai/gpt-oss-20b:free",
         messages: [
           { role: "system", content: systemBaseNoMatch },
           { role: "user", content: pregunta }
         ]
       }
 
-      data = await enviarMensajeAPI(body)
+      data = await sendWithRetry(body)
       respuestaBot.value =
         data?.choices?.[0]?.message?.content?.trim() ||
         "No tengo esa información específica, pero te puedo orientar de forma general. También puedes consultar la web oficial o atención al cliente para detalles concretos."
@@ -128,6 +126,27 @@ const enviarMensaje = async () => {
     })
     scrollToBottom()
   }
+}
+
+async function sendWithRetry(body: BodyChat, max=3) {
+  let attempt = 0
+  let lastErr
+  while (attempt < max) {
+    try {
+      return await enviarMensajeAPI(body)
+    } catch (e: any) {
+      const msg = e?.message || ""
+      if (msg.includes("429") || (e?.response?.status === 429)) {
+        const delay = 800 * (2 ** attempt)
+        await new Promise(r => setTimeout(r, delay))
+        attempt++
+        lastErr = e
+        continue
+      }
+      throw e
+    }
+  }
+  throw lastErr
 }
 </script>
 

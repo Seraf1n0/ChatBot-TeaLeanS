@@ -1,6 +1,5 @@
 //Referencia:https://openrouter.ai/openai/gpt-oss-20b:free
 export interface BodyChat {
-    "model": "openai/gpt-oss-20b:free",
     "messages": Array<{
         "role": "user" | "system" 
         "content": string
